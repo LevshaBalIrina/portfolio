@@ -3,83 +3,108 @@ import { SectionTitle } from '../../../components/SectionTitle';
 import { SkillsList } from './skill/SkillsList';
 import { FlexWrapper } from '../../../components/FlexWrapper';
 import { TitleHint } from '../../../components/TitileHint';
+import { Container } from '../../../components/Container';
 
 const iconItems = [
   {
     iconId: 'git-icon',
-    width: '105',
-    height: '105',
     viewBox: '0 0 105 105',
   },
   {
     iconId: 'html',
-    width: '120',
-    height: '120',
     viewBox: '0 0 120 120',
   },
   {
     iconId: 'css',
-    width: '120',
-    height: '119',
     viewBox: '0 0 120 119',
   },
   {
     iconId: 'javaScript',
-    width: '120',
-    height: '120',
     viewBox: '0 0 120 120',
   },
   {
     iconId: 'react',
-    width: '113',
-    height: '101',
     viewBox: '0 0 113 101',
   },
   {
     iconId: 'bootstrap',
-    width: '88',
-    height: '87',
     viewBox: '0 0 88 87',
   },
   {
     iconId: 'vscode',
-    width: '112',
-    height: '112',
     viewBox: '0 0 112 112',
   },
   {
-    iconId: 'githubfill',
-    width: '88',
-    heigh: '88',
+    iconId: 'githubfillSkill',
     viewBox: '0 0 88 88',
   },
   {
     iconId: 'redux',
-    width: '105',
-    height: '100',
     viewBox: '0 0 105 100',
   },
   {
     iconId: 'typeScript',
-    width: '128',
-    height: '128',
     viewBox: '0 0 128 128',
   },
 ];
 
+// const iconItems = [
+//   {
+//     iconId: 'git-icon',
+    
+//   },
+//   {
+//     iconId: 'html',
+    
+//   },
+//   {
+//     iconId: 'css',
+    
+//   },
+//   {
+//     iconId: 'javaScript',
+    
+//   },
+//   {
+//     iconId: 'react',
+    
+//   },
+//   {
+//     iconId: 'bootstrap',
+    
+//   },
+//   {
+//     iconId: 'vscode',
+    
+//   },
+//   {
+//     iconId: 'githubfillSkill',
+    
+//   },
+//   {
+//     iconId: 'redux',
+    
+//   },
+//   {
+//     iconId: 'typeScript',
+   
+//   },
+// ];
+
 export const Skills = () => {
   return (
     <StyledSkillsSection>
-      <FlexWrapper direction={'column'} align={'center'} wrap={'wrap'}>
+      <Container>
         <SectionTitle>Skills</SectionTitle>
         <TitleHint> Technologies I’ve been working with recently</TitleHint>
+        {/* <FlexWrapper direction={'column'} align={'center'} wrap={'wrap'}> */}
+
         <SkillsList iconItems={iconItems} />
-      </FlexWrapper>
+
+        {/* </FlexWrapper> */}
+      </Container>
     </StyledSkillsSection>
   );
 };
 
-const StyledSkillsSection = styled.section`
-  min-height: 100vh;
-  background-color: bisque;
-`;
+const StyledSkillsSection = styled.section``;

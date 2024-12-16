@@ -17,8 +17,6 @@ export const SkillsList = (props: { iconItems: Array<IconItemsPropsType> }) => {
           <li key={index}>
             <Icon
               iconId={iconItem.iconId}
-              width={iconItem.width}
-              height={iconItem.height}
               viewBox={iconItem.viewBox}
             />
           </li>
@@ -29,13 +27,13 @@ export const SkillsList = (props: { iconItems: Array<IconItemsPropsType> }) => {
 };
 
 const StyleList = styled.ul`
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-auto-rows: minmax(200px, auto);
+  grid-template-columns: repeat(5, auto);
   li {
-    flex-basis: 20%;
     width: 120px;
-    height: 120px;
+    min-height: 120px;
+    justify-self: center;
+    align-self: center;
   }
-  flex-wrap: wrap;
 `;
