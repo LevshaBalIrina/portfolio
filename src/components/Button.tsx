@@ -8,7 +8,7 @@ export const Button = styled.button`
   letter-spacing: -0.02em;
   color: ${theme.colors.primaryFont};
   text-shadow: 1px 1px 2px #0f0101e5;
-  height: 25px;
+  height: 35px;
   width: 170px;
   border-radius: 5px;
   box-shadow: 2px 2px 100px 0 rgba(0, 0, 0, 0.3);

@@ -39,6 +39,10 @@ const StyledForm = styled.form`
     resize: none;
     height: 155px;
   }
+
+  ${Button} {
+    margin-top: 20px;
+  }
 `;
 
 const Field = styled.input`

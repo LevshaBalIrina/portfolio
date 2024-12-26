@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-import { theme } from '../../styles/Theme';
+import { theme } from '../../../styles/Theme';
+import { SocialMedia } from '../../../components/socialMedia/SocialMedia';
 
-export const Menu = (props: { menuItems: Array<string> }) => {
+export const DesktopMenu = (props: { menuItems: Array<string> }) => {
   return (
-    <StyledMenu>
+    <StyledDesktopMenu>
       <ul>
         {props.menuItems.map((item, index) => {
           return (
@@ -13,12 +14,14 @@ export const Menu = (props: { menuItems: Array<string> }) => {
           );
         })}
       </ul>
-    </StyledMenu>
+      {/* <SocialMedia /> */}
+    </StyledDesktopMenu>
   );
 };
 
-const StyledMenu = styled.nav`
+const StyledDesktopMenu = styled.nav`
   display: flex;
+  column-gap: 50px;
   ul {
     display: flex;
     gap: 30px;

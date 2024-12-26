@@ -10,6 +10,7 @@ import project_5 from '../../../assets/image/project-5.webp';
 import project_6 from '../../../assets/image/project-6.webp';
 import { TitleHint } from '../../../components/TitileHint';
 import { Container } from '../../../components/Container';
+import { theme } from '../../../styles/Theme';
 
 export const Works = () => {
   return (
@@ -17,7 +18,7 @@ export const Works = () => {
       <Container>
         <SectionTitle>Projects</SectionTitle>
         <TitleHint>Things I’ve built so far</TitleHint>
-        <FlexWrapper justify={'space-between'} wrap='wrap'>
+        <FlexWrapper justify={'space-between'} wrap="wrap">
           <Work
             src={project_1}
             techStack={'HTML , JavaScript, SASS, React'}
@@ -72,4 +73,12 @@ export const Works = () => {
   );
 };
 
-const StyledWorks = styled.section``;
+const StyledWorks = styled.section`
+  ${FlexWrapper} {
+    row-gap: 65px;
+    column-gap: 50px;
+    @media ${theme.media.tablet} {
+      row-gap: 30px;
+    }
+  }
+`;

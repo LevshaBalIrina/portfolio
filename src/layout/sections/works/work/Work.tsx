@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Icon } from '../../../../components/icon/Icon';
 import { theme } from '../../../../styles/Theme';
+import { FlexWrapper } from '../../../../components/FlexWrapper';
 
 type WorkPropsType = {
   title: string;
@@ -12,9 +13,7 @@ type WorkPropsType = {
 export const Work = (props: WorkPropsType) => {
   return (
     <StyledWork>
-      <a href="#">
-        <Image src={props.src} alt="" />
-      </a>
+      <Image src={props.src} alt="" />
       <TextWrapper>
         <Title>{props.title}</Title>
         <Text>{props.text}</Text>
@@ -22,7 +21,7 @@ export const Work = (props: WorkPropsType) => {
           Tech stack : <span>{props.techStack}</span>
         </Stack>
 
-        <LinkWrapper>
+        <FlexWrapper gap={"50px"}>
           <Link href="#">
             <Icon
               iconId="link-chain"
@@ -30,7 +29,7 @@ export const Work = (props: WorkPropsType) => {
               width="20"
               viewBox="0 0 20 20"
             />
-            <span> Live Preview </span>
+            Live Preview
           </Link>
           <Link href="#">
             <Icon
@@ -39,28 +38,33 @@ export const Work = (props: WorkPropsType) => {
               width="20"
               viewBox="0 0 20 20"
             />
-            <span> View Code </span>
+            View Code
           </Link>
-        </LinkWrapper>
+        </FlexWrapper>
       </TextWrapper>
     </StyledWork>
   );
 };
 
 const StyledWork = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 375px;
+
   border-radius: 20px;
   box-shadow: 2px 2px 100px 0 rgba(0, 0, 0, 0.2);
   background-color: ${theme.colors.secondaryBg};
-  max-width: 375px;
+  //max-width: 375px;
   width: 100%;
-  height: 567px;
-  margin-bottom: 65px;
+  //min-height: 567px;
+  height: 100%;
+  ////margin-bottom: 65px;
+  flex-grow: 1;
 
   &:hover {
     transform: scale(1.05);
   }
 `;
-
 
 const Image = styled.img`
   width: 100%;
@@ -106,21 +110,14 @@ const Link = styled.a`
   font-weight: 400;
   font-size: 16px;
   line-height: 1.625;
+  gap: 10px;
 
   text-decoration: none;
   text-decoration-skip-ink: none;
   color: ${theme.colors.projectLink};
 
-  span {
-    display: block;
-    margin-left: 10px;
-  }
   &:hover {
     text-decoration: underline;
   }
 `;
 
-const LinkWrapper = styled.div`
-  display: flex;
-  gap: 50px;
-`;

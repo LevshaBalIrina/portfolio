@@ -6,6 +6,7 @@ export const GlobalStyled = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    //outline: 1px solid blue;
     
 }
 
@@ -19,6 +20,7 @@ body {
     background-color: ${theme.colors.primaryBg};
     color: ${theme.colors.primaryFont};
     line-height: 1.3;
+    min-width: 375px;
 }
 
 a {
@@ -40,6 +42,7 @@ button {
 section {
    // background-color: ${theme.colors.primaryBg};
     padding: 50px 0 ;
+
     
    
 }

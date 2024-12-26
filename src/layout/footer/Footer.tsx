@@ -1,17 +1,24 @@
 import styled from 'styled-components';
 import { Logo } from '../../components/logo/Logo';
 import { SocialMedia } from '../../components/socialMedia/SocialMedia';
-import { Menu } from '../../components/menu/Menu';
+import { DesktopMenu } from '../header/desktopMenu/DesktopMenu';
 import { FlexWrapper } from '../../components/FlexWrapper';
 import { menuItems } from '../header/Header';
 import { theme } from '../../styles/Theme';
 import { Container } from '../../components/Container';
+import { font } from '../../styles/Common';
+import { MobileMenu } from '../header/mobileMenu/MobileMenu';
 
 export const Footer = () => {
   return (
     <StyledFooter>
       <Container>
-        <FlexWrapper justify={'space-between'} align={'center'} wrap={'wrap'}>
+        <FlexWrapper
+          justify={'space-between'}
+          align={'center'}
+          wrap={'wrap'}
+          gap={'30px'}
+        >
           <Logo iconId="logo" />
           <StyledContacts>
             <Link href="tel:+91 12345 09876">+91 12345 09876</Link>
@@ -20,8 +27,7 @@ export const Footer = () => {
           </StyledContacts>
         </FlexWrapper>
         <Line></Line>
-        <FlexWrapper align={'center'} wrap={'wrap'} justify={'space-between'}>
-          <Menu menuItems={menuItems} />
+        <FlexWrapper align={'center'} wrap={'wrap'} justify={'center'}>
           <Copyright>
             Designed and built by <span>Pavan MG</span> with <span>Love</span> &{' '}
             <span>Coffee</span>
@@ -35,6 +41,17 @@ export const Footer = () => {
 const StyledFooter = styled.footer`
   background-color: ${theme.colors.primaryBg};
   padding-bottom: 60px;
+
+  @media ${theme.media.tablet} {
+    ${FlexWrapper}:first-child {
+      justify-content: center;
+    }
+  }
+
+  @media ${theme.media.mobile} {
+    ${FlexWrapper}:last-child {
+    }
+  }
 `;
 const Link = styled.a`
   font-family: 'DM Sans', sans-serif;
@@ -42,6 +59,8 @@ const Link = styled.a`
   font-size: 18px;
   line-height: 1.44444;
   color: ${theme.colors.secondaryFont};
+  white-space: nowrap;
+  // text-align: center;
 
   &:hover {
     text-decoration: underline;
@@ -50,40 +69,27 @@ const Link = styled.a`
 `;
 
 const Copyright = styled.small`
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
+  ${font({
+    family: "'Poppins', sans-serif",
+    color: 'theme.colors.secondaryFont',
+    weight: 400,
+    Fmax: 18,
+    Fmin: 12,
+  })}
+
   line-height: 1.44444;
   text-align: center;
-  color: ${theme.colors.secondaryFont};
-  span {
-    &:nth-child(1) {
-      background: linear-gradient(90deg, #13b0f5 2.6%, #e70faa 100%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    &:nth-child(2) {
-      background: linear-gradient(90deg, #13b0f5 2.6%, #e70faa 100%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    &:nth-child(3) {
-      background: linear-gradient(90deg, #13b0f5 2.6%, #e70faa 100%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  }
 `;
 
 const StyledContacts = styled.div`
   display: flex;
-  a + a {
-    margin-left: 33px;
-  }
+  flex-wrap: wrap;
   gap: 48px;
+
+  @media ${theme.media.tablet} {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const Line = styled.div`

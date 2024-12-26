@@ -26,6 +26,7 @@ export const SocialMedia = () => {
 
 const StyledSocialMedia = styled.ul`
   display: flex;
+  justify-content: center;
   gap: 20px;
 `;
 

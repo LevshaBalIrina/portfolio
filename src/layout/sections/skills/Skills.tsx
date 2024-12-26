@@ -51,43 +51,43 @@ const iconItems = [
 // const iconItems = [
 //   {
 //     iconId: 'git-icon',
-    
+
 //   },
 //   {
 //     iconId: 'html',
-    
+
 //   },
 //   {
 //     iconId: 'css',
-    
+
 //   },
 //   {
 //     iconId: 'javaScript',
-    
+
 //   },
 //   {
 //     iconId: 'react',
-    
+
 //   },
 //   {
 //     iconId: 'bootstrap',
-    
+
 //   },
 //   {
 //     iconId: 'vscode',
-    
+
 //   },
 //   {
 //     iconId: 'githubfillSkill',
-    
+
 //   },
 //   {
 //     iconId: 'redux',
-    
+
 //   },
 //   {
 //     iconId: 'typeScript',
-   
+
 //   },
 // ];
 
@@ -97,11 +97,7 @@ export const Skills = () => {
       <Container>
         <SectionTitle>Skills</SectionTitle>
         <TitleHint> Technologies I’ve been working with recently</TitleHint>
-        {/* <FlexWrapper direction={'column'} align={'center'} wrap={'wrap'}> */}
-
         <SkillsList iconItems={iconItems} />
-
-        {/* </FlexWrapper> */}
       </Container>
     </StyledSkillsSection>
   );
