@@ -4,6 +4,7 @@ import { SkillsList } from './skill/SkillsList';
 import { FlexWrapper } from '../../../components/FlexWrapper';
 import { TitleHint } from '../../../components/TitileHint';
 import { Container } from '../../../components/Container';
+import React from 'react';
 
 const iconItems = [
   {
@@ -91,7 +92,7 @@ const iconItems = [
 //   },
 // ];
 
-export const Skills = () => {
+export const Skills: React.FC = () => {
   return (
     <StyledSkillsSection>
       <Container>

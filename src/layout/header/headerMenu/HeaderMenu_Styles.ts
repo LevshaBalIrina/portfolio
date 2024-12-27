@@ -1,43 +1,40 @@
 import styled, { css } from 'styled-components';
 import { theme } from '../../../styles/Theme';
-import { SocialMedia } from '../../../components/socialMedia/SocialMedia';
 
-export const MobileMenu = (props: { menuItems: Array<string> }) => {
-  return (
-    <StyledMobileMenu>
-      <BurgerButton isOpen={false}>
-        <span></span>
-      </BurgerButton>
-
-      <MobileMenuPopup isOpen={false}>
-        <MenuList>
-          {props.menuItems.map((item, index) => {
-            return (
-              <ListItem key={index}>
-                <Link href="">{item}</Link>
-              </ListItem>
-            );
-          })}
-        </MenuList>
-        <SocialMedia />
-      </MobileMenuPopup>
-    </StyledMobileMenu>
-  );
-};
-
-const StyledMobileMenu = styled.nav`
-  display: none;
-  @media ${theme.media.tablet} {
-    display: block;
-  }
-`;
+// menu
 
 const MenuList = styled.ul`
   display: flex;
   gap: 20px;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  // justify-content: center;
+  //flex-direction: column;
+  //align-items: center;
+`;
+
+const ListItem = styled.li``;
+
+const Link = styled.a`
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  //line-height: 1.3;
+  text-align: center;
+  color: ${theme.colors.secondaryFont};
+  display: inline-block;
+
+  &:hover {
+    transform: scale(1.1);
+    color: ${theme.colors.projectLink};
+  }
+`;
+
+/////// MobileMenu
+
+const MobileMenu = styled.nav`
+  display: none;
+  @media ${theme.media.desktop_881} {
+    display: block;
+  }
 `;
 
 const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
@@ -56,25 +53,9 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
       display: flex;
       flex-direction: column;
       justify-content: center;
+
       gap: 60px;
     `}
-`;
-
-const ListItem = styled.li``;
-
-const Link = styled.a`
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
-  font-size: 20px;
-  //line-height: 1.3;
-  text-align: center;
-  color: ${theme.colors.secondaryFont};
-  display: inline-block;
-
-  &:hover {
-    transform: scale(1.1);
-    color: ${theme.colors.projectLink};
-  }
 `;
 
 const BurgerButton = styled.button<{ isOpen: boolean }>`
@@ -134,3 +115,25 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     }
   }
 `;
+
+//// DesktopMenu
+
+const DesktopMenu = styled.nav`
+  display: flex;
+  column-gap: 50px;
+  ul {
+    display: flex;
+    //gap: 30px;
+    list-style: none;
+  }
+`;
+
+export const S = {
+  MenuList,
+  ListItem,
+  Link,
+  MobileMenu,
+  MobileMenuPopup,
+  BurgerButton,
+  DesktopMenu,
+};

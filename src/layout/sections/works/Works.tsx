@@ -11,62 +11,64 @@ import project_6 from '../../../assets/image/project-6.webp';
 import { TitleHint } from '../../../components/TitileHint';
 import { Container } from '../../../components/Container';
 import { theme } from '../../../styles/Theme';
+import React from 'react';
 
-export const Works = () => {
+const worksData = [
+  {
+    src: project_1,
+    techStack: 'HTML , JavaScript, SASS, React',
+    title: 'Project Tile goes here',
+    text: 'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content',
+  },
+  {
+    src: project_2,
+    techStack: 'HTML , JavaScript, SASS, React',
+    title: 'Project Tile goes here',
+    text: 'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content',
+  },
+  {
+    src: project_3,
+    techStack: 'HTML , JavaScript, SASS, React',
+    title: 'Project Tile goes here',
+    text: 'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content',
+  },
+  {
+    src: project_4,
+    techStack: 'HTML , JavaScript, SASS, React',
+    title: 'Project Tile goes here',
+    text: 'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content',
+  },
+  {
+    src: project_5,
+    techStack: 'HTML , JavaScript, SASS, React',
+    title: 'Project Tile goes here',
+    text: 'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content',
+  },
+  {
+    src: project_6,
+    techStack: 'HTML , JavaScript, SASS, React',
+    title: 'Project Tile goes here',
+    text: 'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content',
+  },
+];
+
+export const Works: React.FC = () => {
   return (
     <StyledWorks>
       <Container>
         <SectionTitle>Projects</SectionTitle>
         <TitleHint>Things I’ve built so far</TitleHint>
         <FlexWrapper justify={'space-between'} wrap="wrap">
-          <Work
-            src={project_1}
-            techStack={'HTML , JavaScript, SASS, React'}
-            title={'Project Tile goes here'}
-            text={
-              'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content'
-            }
-          />
-          <Work
-            src={project_2}
-            techStack={'HTML , JavaScript, SASS, React'}
-            title={'Project Tile goes here'}
-            text={
-              'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content'
-            }
-          />
-          <Work
-            src={project_3}
-            techStack={'HTML , JavaScript, SASS, React'}
-            title={'Project Tile goes here'}
-            text={
-              'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content'
-            }
-          />
-          <Work
-            src={project_4}
-            techStack={'HTML , JavaScript, SASS, React'}
-            title={'Project Tile goes here'}
-            text={
-              'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content'
-            }
-          />
-          <Work
-            src={project_5}
-            techStack={'HTML , JavaScript, SASS, React'}
-            title={'Project Tile goes here'}
-            text={
-              'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content'
-            }
-          />
-          <Work
-            src={project_6}
-            techStack={'HTML , JavaScript, SASS, React'}
-            title={'Project Tile goes here'}
-            text={
-              'This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content'
-            }
-          />
+          {worksData.map((work, index) => {
+            return (
+              <Work key={index}
+                src={work.src}
+                techStack={work.techStack}
+                title={work.title}
+                text={work.text}
+              />
+            );
+          })}
         </FlexWrapper>
       </Container>
     </StyledWorks>

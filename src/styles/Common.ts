@@ -21,6 +21,6 @@ export const font = ({
     font-weight: ${weight || 400};
     color: ${color || theme.colors.primaryFont};
     line-height: ${lineHeihgt || 1.3}; 
-    font-size: calc( (100vw - 360px) / (1600 - 360) * (${Fmax} - ${Fmin}) + ${Fmin}px );
+    font-size: clamp(${Fmin}px, ( calc( (100vw - 360px) / (1600 - 360) * (${Fmax} - ${Fmin}) + ${Fmin}px )), ${Fmax}px) ;
 
 `;
